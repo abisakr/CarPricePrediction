@@ -1,5 +1,6 @@
 import { useState, FormEvent } from 'react';
 
+// Define the exact shape of our data for TypeScript
 interface CarData {
   Year: number | '';
   Present_Price: number | '';
@@ -61,7 +62,6 @@ export default function CarPricePredictor() {
   };
 
   return (
-    
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 py-12 px-4 sm:px-6 lg:px-8 transition-all">
       
       <div className="w-full max-w-xl mx-auto bg-white/95 backdrop-blur-xl rounded-3xl shadow-[0_0_40px_rgba(79,70,229,0.3)] border border-white/20 overflow-hidden p-8 sm:p-10 transform transition-all duration-500 hover:shadow-[0_0_60px_rgba(79,70,229,0.5)]">
@@ -80,7 +80,8 @@ export default function CarPricePredictor() {
               <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 group-focus-within:text-indigo-600 transition-colors">Mfg Year</label>
               <input 
                 type="number" name="Year" required value={formData.Year} onChange={handleChange} 
-                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none" 
+                placeholder="e.g., 2018"
+                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none placeholder:text-gray-400" 
               />
             </div>
             
@@ -89,7 +90,8 @@ export default function CarPricePredictor() {
               <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 group-focus-within:text-indigo-600 transition-colors">Showroom Price (Lakhs)</label>
               <input 
                 type="number" step="0.01" name="Present_Price" required value={formData.Present_Price} onChange={handleChange} 
-                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none" 
+                placeholder="e.g., 9.85"
+                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none placeholder:text-gray-400" 
               />
             </div>
             
@@ -98,7 +100,8 @@ export default function CarPricePredictor() {
               <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 group-focus-within:text-indigo-600 transition-colors">Kilometers Driven</label>
               <input 
                 type="number" name="Kms_Driven" required value={formData.Kms_Driven} onChange={handleChange} 
-                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none" 
+                placeholder="e.g., 45000"
+                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none placeholder:text-gray-400" 
               />
             </div>
             
@@ -107,7 +110,8 @@ export default function CarPricePredictor() {
               <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 group-focus-within:text-indigo-600 transition-colors">Previous Owners</label>
               <input 
                 type="number" name="Owner" min="0" max="5" required value={formData.Owner} onChange={handleChange} 
-                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none" 
+                placeholder="e.g., 0"
+                className="block w-full rounded-xl border-0 bg-gray-50/50 p-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 transition-all duration-200 ease-in-out hover:bg-white focus:bg-white focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none placeholder:text-gray-400" 
               />
             </div>
           </div>
